@@ -1,0 +1,3 @@
+中文的windows下的cmd默认使用GBK的编码。
+每次需要的时候在VScode终端输入命令：
+chcp 65001
