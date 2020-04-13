@@ -1,20 +1,20 @@
 #include<bits/stdc++.h>
 using namespace std;
+
 class Solution {
 public:
-    bool isPalindrome(int x) {
-        if(x<0) return false;
-        int t,sum=0,k=x;
-        while(x){
-            t=x%10;
-            x/=10;
-            sum=sum*10+t;
+    string longestCommonPrefix(vector<string>& strs) {
+        sort(strs.begin(),strs.end());
+        for(int i=0;;i++){
+            if(strs[0][i]!=strs[strs.end()-1][i]) return substr(0,i);
         }
         return sum==k;
     }
 };
+
 int main() {
     Solution a;
-    cout<<a.isPalindrome(121);
+    vector<string> strs=["flower","flow","flight"];
+    cout<<a.romanToInt(strs);
     return 0;
 }
