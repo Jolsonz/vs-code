@@ -1,9 +1,7 @@
-#include<bits/stdc++.h>
-using namespace std;
-int main() {
-    string s;
-    cin>>s;
-    reverse(s.begin(),s.end());
-    cout<<s;
-    return 0;
-}
+    string longestCommonPrefix(vector<string>& strs) {
+        string ans;
+        sort(strs.begin(),strs.end());
+        for(int i=0;;i++){
+            if(strs[0][i]!=strs[strs.size()-1][i]) return strs[0].substr(0,i);
+        }
+    }
