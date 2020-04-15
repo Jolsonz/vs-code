@@ -15,20 +15,15 @@
  */
 class Solution {
 public:
+// 注意指针的应用。
     ListNode* deleteDuplicates(ListNode* head) {
-        if(!head) return head;//还是有空值情况。
-        int temp=head->val;
-        ListNode *pre=head,*ans=head;//前指针
-        while(head->next!=NULL){
-            head=head->next;
-            if(head->val!=temp){
-                pre->next=head;
-                pre=head;
-                temp=head->val;
+        ListNode *ans=head;//前指针
+        while(head && head->next){
+            if(head->val== head->next->val){
+                head->next=head->next->next;
             }
+            else head=head->next;
         }
-        if(pre->val==head->val)
-            pre->next=NULL;//注意最后head和pre可能是同一个值，那么pre->next还没改。
         return ans;
     }
 };
