@@ -8,6 +8,7 @@
 class Solution {
 public:
     // 给这个公式变形成A[i]+i+A[j]-j，可以看成是左A[i]+i和右A[j]-j两部分和的最大值。
+    // 这其实是动态规划的思路。
     int maxScoreSightseeingPair(vector<int>& A) {
         int left=A[0]+0,res=0;//初始i=0
         for(int j=1;j<A.size();j++){
@@ -17,18 +18,6 @@ public:
         return res;
     }
 
-    // 这道题可以用动态规划解，但是我不会
-    int maxScoreSightseeingPair(vector<int>& A) {
-        int fn = 0;            // f0
-        int tn = A[0] + 0;     // t0
-        
-        for (int n = 1; n < A.size(); ++n){
-            fn = max(fn, tn + A[n] - n);
-            tn = max(tn, A[n] + n);
-        }
-        
-        return fn;
-    }
 
     // 暴力循环，在第46个测试用例时超时。
     int maxScoreSightseeingPair(vector<int>& A) {
