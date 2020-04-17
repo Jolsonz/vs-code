@@ -7,6 +7,7 @@
 // @lc code=start
 class Solution {
 public:
+    // 熟练Ctype.h头文件的函数哦，挺好用的。
     bool isPalindrome(string s) {
         string temp;
         if(s=="") return true;
