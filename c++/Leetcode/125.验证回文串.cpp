@@ -8,16 +8,13 @@
 class Solution {
 public:
     bool isPalindrome(string s) {
+        string temp;
         if(s=="") return true;
         for(auto it=s.begin();it!=s.end();it++){
-            if(isupper(*it) ) *it=*it-'A'+'a';//是大写转小写
-            else if(islower(*it) || isdigit(*it)) continue;//小写和数字不管
-            else {
-                s.erase(it);
-                it--;//注意移除一个之后，自动跳到了下一个，所以后退一个。
-            }
+            if(isupper(*it) ) temp+=tolower(*it);//是大写转小写
+            else if(islower(*it) || isdigit(*it)) temp+=*it;//小写和数字不管
         }
-        string temp=s;
+        s=temp;
         reverse(s.begin(),s.end());
         return temp==s;
     }
