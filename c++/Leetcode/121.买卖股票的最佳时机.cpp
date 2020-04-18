@@ -7,7 +7,7 @@
 // @lc code=start
 class Solution {
 public:
-    // 我太难了，这个写法直接超时。暴力不可取。在电脑上是能正确得到答案的。
+    // 我太难了，这个写法第199个超时。暴力不可取
     // int maxProfit(vector<int>& prices) {
     //     int max=0;
     //     if(prices.size()<2) return 0;

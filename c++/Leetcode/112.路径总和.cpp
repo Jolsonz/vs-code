@@ -16,11 +16,11 @@
  */
 class Solution {
 public:
-// ???????????????
+// 自己写出来的，比较有趣。递归操作。
     bool hasPathSum(TreeNode* root, int sum) {
-        if(root==NULL) return false;//?????????????
-        if(!root->left && !root->right){//?????
-            return sum==root->val;//????ture
+        if(root==NULL) return false;
+        if(!root->left && !root->right){
+            return sum==root->val;
         }
         return hasPathSum(root->left,sum-root->val)||hasPathSum(root->right,sum-root->val);
     }

@@ -6,5 +6,6 @@
     },
     "cSpell.ignoreWords": [
         "stoi"
-    ]
+    ],
+    "python.pythonPath": "C:\\Users\\Jolson\\AppData\\Local\\Programs\\Python\\Python35\\python.exe"
 }
