@@ -1,8 +1,8 @@
 #include<bits/stdc++.h>
 using namespace std;
-#include "A.h"
+// #include "A.h"
 int main() {
-    A a;
-    a.output();
+    int a=-4,b=3;
+    cout<<a/b;
     return 0;
 }

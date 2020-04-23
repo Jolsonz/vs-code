@@ -8,9 +8,10 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
-typedef long ll;//我tm就不明白，这里用long long为啥输出的不对，编译器问题么，在PTA提交页面是对的
+typedef long long int  ll;//我tm就不明白，这里用long long为啥输出的不对，编译器问题么，在PTA提交页面是对的
 //辗转相除法 求最大公约数 
 ll gcd(ll a, ll b){
+    if(a==0) return 1;
     return b == 0 ? a : gcd(b, a % b);//这个写法在算法竞赛入门上也有。
 }
 // out这个函数要放在前面，不然后面调用的时候会说他没有申明
@@ -30,10 +31,11 @@ void out(ll a,ll b){//这个是化成有理数形式的函数,能化成整数要
     }
     else{//假分数,负数要跟着d
         ll d=a/b;
-        a=abs(a)-abs(d)*b;
-        if(d>=0) cout<<d<<' '<<a<<'/'<<b;
-        else cout<<'('<<d<<' '<<a<<'/'<<b<<')';
+        a=abs(a)-abs(d)*abs(b);
+        if(d>0) cout<<d<<' '<<a<<'/'<<b;
+        else cout<<'('<<d<<' '<<abs(a)<<'/'<<abs(b)<<')';
     }
+    return;
 }
 void chen(ll a1,ll b1,ll a2,ll b2){
     if(!b1 || !b2){//如果有一个分母为0
@@ -41,12 +43,22 @@ void chen(ll a1,ll b1,ll a2,ll b2){
         return;
     }
     ll a,b,c;//c最大公约数
+    c=gcd(abs(a1),abs(b1));
+    a1=a1/c;b1=b1/c;
+    c=gcd(abs(a2),abs(b2));
+    a2=a2/c;b2=b2/c;
+    c=gcd(abs(a1),abs(b2));
+    a1=a1/c;b2=b2/c;
+    c=gcd(abs(a2),abs(b1));
+    a2=a2/c;b1=b1/c;
+
     a=a1*a2;
     b=b1*b2;//新分子分母
     c=gcd(abs(a),abs(b));//可能是负数，取绝对值
     a=a/c;
     b=b/c;
     out(a,b);//再输出
+    return;
 }
 void jia(ll a1,ll b1,ll a2,ll b2){
     if(!b1||!b2){//如果有一个分母为0
@@ -55,13 +67,22 @@ void jia(ll a1,ll b1,ll a2,ll b2){
     }
     if(!a1) {out(a2,b2);return;}//a1为0
     if(!a2) {out(a1,b1);return;}
-    long long a,b,c;//c最大公约数
-    a=a1*b2+a2*b1;//通分
+    ll a,b,c;//c最大公约数
+    c=gcd(abs(a1),abs(b1));
+    a1=a1/c;b1=b1/c;
+    c=gcd(abs(a2),abs(b2));
+    a2=a2/c;b2=b2/c;
+    c=gcd(abs(a1),abs(b2));
+    a1=a1/c;b2=b2/c;
+    c=gcd(abs(a2),abs(b1));
+    a2=a2/c;b1=b1/c;
     b=b1*b2;
+    a=a1*b2+a2*b1;//通分
     c=gcd(abs(a),b);
     a=a/c;
     b=b/c;
     out(a,b);
+    return;
 }
 int main(){
     ll a1,b1,a2,b2;

@@ -2,6 +2,7 @@
     "python.linting.enabled": false,
     "C_Cpp.errorSquiggles": "Disabled",
     "files.exclude": {
+        ".vscode": true,
         "**/*.exe": true
     },
     "cSpell.ignoreWords": [
