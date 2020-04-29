@@ -8,6 +8,7 @@
 class Solution {
 public:
     bool isPowerOfTwo(int n) {
+        // return n > 0 && n & (n - 1) == 0;//这一句不行,n=2过不了
         return (n>0) && (1<<30) % n == 0;
         //左移30位到Int允许的最大2次幂，然后他只能整除所有的二次幂组成的值。
         return (n > 0) && (n & -n) == n;

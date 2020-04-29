@@ -1,7 +1,12 @@
-#include<bits/stdc++.h>
-using namespace std;
+/*
+ * @lc app=leetcode.cn id=299 lang=cpp
+ *
+ * [299] 猜数字游戏
+ */
 
+// @lc code=start
 class Solution {
+    //本质上是个简单问题。
 public:
     string getHint(string secret, string guess) {
         int a=0,b=0;
@@ -22,9 +27,5 @@ public:
 
     }
 };
-int main() {
-    string z = "1123", x= "0111";
-    Solution a;
-    cout<<a.getHint(z,x); 
-    return 0;
-}
+// @lc code=end
+
