@@ -2,20 +2,21 @@
 using namespace std;
 class Solution {
 public:
-    // 稍微有点没整明白
-    int getSum(int a, int b) {
-        while (b) {
-            auto c = ((unsigned int)a & b) << 1; // 防止 AddressSanitizer 对有符号左移的溢出保护处理
-            a = a ^ b;
-            b = c;
+    // 麻烦在补码
+    string toHex(int num) {
+        if (num == 0) return "0";
+        string hex = "0123456789abcdef", ans = "";
+        while(num && ans.size() < 8){
+            ans = hex[num & 0xf] + ans;
+            num >>=  4; 
         }
-        return a;
+        return ans;
     }
 };
 int main(){
     Solution t;
-    int a,b;
-    cin>>a>>b;
-    cout<<t.getSum(a,b);
+    int a;
+    cin>>a;
+    cout<<t.toHex(a);
     return 0;
 }
