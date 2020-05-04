@@ -13,7 +13,7 @@ public:
     float getY();
     void setPoint(float, float);
     friend ostream& operator<<(ostream &output, const Point &p);    //运算符重载
-    
+    // 全局运算符重载，用到了Point类中的protected成员，但是运算符重载函数又不是Point类的成员，所以要声明友元
 };
 
 #endif
