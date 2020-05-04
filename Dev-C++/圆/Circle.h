@@ -3,7 +3,7 @@
 
 #include "Point.h"//point.h里有iostream和using namespace
 
-class Circle:public Point
+class Circle:public Point//继承point
 {
 public:
     Circle(float a = 0, float b = 0, float r = 0);

@@ -2,22 +2,18 @@
 #include"Point.h"
 using namespace std;
 
-Point::Point(float a, float b)
-{
+Point::Point(float a, float b){//构造函数
     x = a;
     y = b;
 }
 
-float Point::getX()
-{
+float Point::getX(){
     return x;
 }
-float Point::getY()
-{
+float Point::getY(){
     return y;
 }
-void Point::setPoint(float a, float b)
-{
+void Point::setPoint(float a, float b){
     x = a;
     y = b;
 }

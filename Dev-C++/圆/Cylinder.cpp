@@ -16,7 +16,7 @@ float Cylinder::getH()
 
 float Cylinder::area()
 {
-    return 2 * Circle::area() + 2 * 3.14*radius*height;
+    return 2 * Circle::area() + 2 * 3.14*radius*height;//圆柱体的表面积
 }
 
 float Cylinder::volume()
