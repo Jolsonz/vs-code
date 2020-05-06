@@ -1,4 +1,4 @@
-#include<iostream>
+﻿#include<iostream>
 #include"Cylinder.h"
 using namespace std;
 
@@ -26,6 +26,18 @@ float Cylinder::volume()
 
 ostream& operator<<(ostream &output, Cylinder &cy)    //cy.area() 属于同名覆盖
 {
-    output << "圆心：(" << cy.x << "," << cy.y << ")   半径：" << cy.radius << "  高：" << cy.height << "\n                  面积: " << cy.area() << "   体积:" << cy.volume() << endl;
+    output << "圆心：(" 
+        << cy.x 
+        << "," 
+        << cy.y 
+        << ")半径:" 
+        << cy.radius 
+        << "  高：" 
+        << cy.height 
+        << "面积:" 
+        << cy.area() 
+        << "体积 : " 
+        << cy.volume() 
+        << endl;
     return output;
 }
