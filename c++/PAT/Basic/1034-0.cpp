@@ -11,7 +11,6 @@ using namespace std;
 typedef long long int  ll;//我tm就不明白，这里用long long为啥输出的不对，编译器问题么，在PTA提交页面是对的
 //辗转相除法 求最大公约数 
 ll gcd(ll a, ll b){
-    if(a==0) return 1;
     return b == 0 ? a : gcd(b, a % b);//这个写法在算法竞赛入门上也有。
 }
 // out这个函数要放在前面，不然后面调用的时候会说他没有申明
