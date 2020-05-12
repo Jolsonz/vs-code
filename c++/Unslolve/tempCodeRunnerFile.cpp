@@ -1,0 +1,1 @@
+set_union(a.begin(), a.end(), b.begin(), b.end(), insert_iterator<set<int>>(c, c.begin()));

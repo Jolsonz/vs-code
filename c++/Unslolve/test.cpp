@@ -1,29 +1,48 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <set>
+#include <iterator>
+#include <algorithm>
+
 using namespace std;
-class Solution {
-public:
-    string addStrings(string num1, string num2) {
-        // 大整正数加法，老套路了
-        if(num1.size()<num2.size()) return addStrings(num2,num1);//第一个要大于第二个
-        if(num1.size()!=num2.size()){
-            string ss(num1.size()-num2.size(),'0');
-            num2=ss+num2;
-        }
-        int carry=0;//进位
-        for(int i=num1.size()-1;i>=0;i--){//从后往前加
-            int t=num1[i]-'0'+num2[i]-'0'+carry;
-            if(t>9){ t-=10;carry=1;}
-            else carry=0;
-            num1[i]=t+'0';
-        }
-        if(carry) num1='1'+num1;
-        return num1;
-    }
-};
-int main(){
-    Solution t;
-    string a,b;
-    cin>>a>>b;
-    cout<<t.addStrings(a,b);
+//求两个集合的和(并集)、差、交集
+//set库提供set容器，iterator库提供迭代器，algorithm库提供集合操作(故也可以对其他容器进行集合操作)
+int main()
+{
+    set<int> a, b;
+    set<int> c, d, e;
+    a.insert(1);
+    a.insert(2);
+    b.insert(2);
+    b.insert(3);
+
+    set_union(a.begin(), a.end(), b.begin(), b.end(), insert_iterator<set<int>>(c, c.begin()));
+    set_difference(a.begin(), a.end(), b.begin(), b.end(), insert_iterator<set<int>>(d,d.begin()));
+    set_intersection(a.begin(), a.end(), b.begin(), b.end(), insert_iterator<set<int>>(e, e.begin()));
+
+    cout << "a: ";
+    for(auto i : a)
+        cout << i << " ";
+    cout << endl;
+
+    cout << "b: ";
+    for(auto i : b)
+        cout << i << " ";
+    cout << endl;
+
+    cout << "c = a + b: ";
+    for (auto i : c)
+        cout << i << " ";
+    cout << endl;
+
+    cout << "d = a - b: ";
+    for(auto i : d)
+        cout << i << " ";
+    cout << endl;
+
+    cout << "e = a & b: ";
+    for(auto i : e)
+        cout << i << " ";
+    cout << endl;
+
     return 0;
 }
