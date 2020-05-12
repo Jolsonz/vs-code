@@ -1,0 +1,33 @@
+集合覆盖问题。
+用贪婪算法
+1. 先重定向输入，得先把数据的对应关系给反一下，变成监控摄像头对应点的集合Camera。
+2. 先生成一个0~n-1的set集合S。
+3. 然后遍历Camera每次选择覆盖S最多且未被选择的集合Camera[i]，从S中减去与Camera[i]的交集
+4. 把Camera[i]置空，因为它被使用过了，同时把i放入ans
+5. 重复2,3,4,直到为S空。
+6. 输出ans的长度（所需监控个数），以及每个ans的元素（监控的编号）
+
+伪码表示：
+vector<set<int> > camera(n);//n个摄像头对应的点集给输入进来
+set<int> s;//初始化为0~m-1
+vector<int> ans;
+while(s.size()!=0){
+    set<int> max;//记录最大的交集
+    max_camera;//记录能取得最大交集摄像头的下标
+    for(int i=0;i<n;i++){
+        set<int> t = camera[i] & s;//camera[i]与s的交集
+        if(t.size()>max.size())//元素比max中多
+        { 
+            max=t;
+            max_camera=i;
+        }
+    }
+    s=s-t;//s减去t这个交集
+    ans.push_back(max_camera);//放入下标
+}
+cout<<ans.size();//输出结果
+for(auto i : ans) cout<<i;//输出下标
+
+但我发现sc实例全部都会超时，得不到结果，跑了1h也没结果。
+我认为是sc实例中，监控的数量明显偏多，导致维护set<int>的开销变的很大
+另外每次求交集都要遍历一遍所有监控，最后导致超时。
