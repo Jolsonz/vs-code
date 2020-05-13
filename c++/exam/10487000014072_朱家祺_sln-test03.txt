@@ -1,2 +1,6 @@
-4
+Need Camera number = 4
 360 22684 11162 319
+Time used = 1.8759999999999998899
+
+--------------------------------
+Process exited after 1.925 seconds with return value 0
