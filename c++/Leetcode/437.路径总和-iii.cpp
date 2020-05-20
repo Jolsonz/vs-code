@@ -16,9 +16,16 @@
  */
 class Solution {
 public:
+    // ????????easy????????
     int pathSum(TreeNode* root, int sum) {
-
+        if(root == nullptr) return 0;
+        return dfs(root , sum) + pathSum(root->left,sum) + pathSum(root->right,sum);
     }
+    int dfs(TreeNode* root ,int sum){
+        if(root == nullptr) return 0;
+        sum-=root->val;
+        return(0 == sum ? 1:0)+dfs(root->left,sum)+dfs(root->right,sum);
+    } 
 };
 // @lc code=end
 

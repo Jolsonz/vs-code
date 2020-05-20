@@ -1,4 +1,3 @@
-//这题本来想用string s=to_string(n) 的，怎么都不行。
 #include<bits/stdc++.h>
 using namespace std;
 
