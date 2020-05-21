@@ -1,0 +1,10 @@
+{
+    "files.exclude": {
+        ".vscode": true,
+        "**/.classpath": true,
+        "**/.factorypath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/*.class": true
+    }
+}
