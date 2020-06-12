@@ -21,8 +21,8 @@ public class p45 {
             1 - 1/Math.pow(1+monthInterestRate,numberOfYear*12)
         );
         double totalPayment = monthlyPayment *numberOfYear *12;
-        monthlyPayment = (int) monthlyPayment;//这个操作时为了去除小数位，保留一位小数？感觉没太大必要吧
-        totalPayment = (int) totalPayment;
+        monthlyPayment = (int) (monthlyPayment * 100) / 100.0;//这个操作时为了保留两位小数，注意括号要包括乘100
+        totalPayment = (int) (totalPayment *100) /100.0;
         String output = " The monthly payment is "+ monthlyPayment + "\n The total payment is" + totalPayment;
         JOptionPane.showMessageDialog(null, output,"Result",JOptionPane.INFORMATION_MESSAGE);
     }
