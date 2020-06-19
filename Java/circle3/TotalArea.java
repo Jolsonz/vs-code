@@ -1,3 +1,4 @@
+package circle3;
 public class TotalArea {
     public static void main(String[] args) {
         Circle3[] circleArray;

@@ -1,5 +1,5 @@
+package hello;
 import java.util.Scanner;
-
 public class Area {
     public static void main(final String[] args) {
         final Scanner inpute = new Scanner(System.in);
