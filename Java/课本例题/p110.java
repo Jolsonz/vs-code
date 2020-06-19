@@ -1,5 +1,5 @@
-// 用GUI控制循环。
 import javax.swing.JOptionPane;
+// 用GUI控制循环。
 public class p110 {
   public static void main(String[] args) {
       int sum=0;
