@@ -1,1 +1,0 @@
-Circle2.numberOfObject

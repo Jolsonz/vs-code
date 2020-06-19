@@ -3,6 +3,7 @@ public class TotalArea {
         Circle3[] circleArray;
         circleArray = createCircleArray();
         printCircleArray(circleArray);
+        
     }
 
     public static Circle3[] createCircleArray(){
