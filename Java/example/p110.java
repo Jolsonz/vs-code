@@ -1,3 +1,5 @@
+package example;
+
 import javax.swing.JOptionPane;
 // 用GUI控制循环。
 public class p110 {

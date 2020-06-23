@@ -1,3 +1,4 @@
+package Unclassified;
 
 public class PrimitiveTypeTest {  
     public static void main(String[] args) {  

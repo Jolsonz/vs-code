@@ -1,3 +1,4 @@
+package Unclassified;
 public class Puppy{
    int puppyAge;//成员变量
    public Puppy(String name){                                   

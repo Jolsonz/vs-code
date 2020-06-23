@@ -1,3 +1,5 @@
+package example;
+
 // 例2-11
 import javax.swing.JOptionPane;
 /**
@@ -7,23 +9,23 @@ import javax.swing.JOptionPane;
  * 类型转换也麻烦。
  */
 public class p45 {
-    public static void main(String[] args) {
-        String annualInterestRateString = JOptionPane.showInputDialog("Enter yearly interest rate:","8.25");
-        double annualInterestRate = Double.parseDouble(annualInterestRateString);
-        double monthInterestRate = annualInterestRate / 1200;
-        String numberOfYearString = JOptionPane.showInputDialog(
+    public static void main(final String[] args) {
+        final String annualInterestRateString = JOptionPane.showInputDialog("Enter yearly interest rate:","8.25");
+        final double annualInterestRate = Double.parseDouble(annualInterestRateString);
+        final double monthInterestRate = annualInterestRate / 1200;
+        final String numberOfYearString = JOptionPane.showInputDialog(
             "Enter number of years as an integer:", "5");
-        int numberOfYear = Integer.parseInt(numberOfYearString);
+        final int numberOfYear = Integer.parseInt(numberOfYearString);
         
-        String loanString = JOptionPane.showInputDialog("Enter Loan amount:", "120000.95");
-        double loanAmount = Double.parseDouble(loanString);
+        final String loanString = JOptionPane.showInputDialog("Enter Loan amount:", "120000.95");
+        final double loanAmount = Double.parseDouble(loanString);
         double monthlyPayment = loanAmount * monthInterestRate / (
             1 - 1/Math.pow(1+monthInterestRate,numberOfYear*12)
         );
         double totalPayment = monthlyPayment *numberOfYear *12;
         monthlyPayment = (int) (monthlyPayment * 100) / 100.0;//这个操作时为了保留两位小数，注意括号要包括乘100
         totalPayment = (int) (totalPayment *100) /100.0;
-        String output = " The monthly payment is "+ monthlyPayment + "\n The total payment is" + totalPayment;
+        final String output = " The monthly payment is "+ monthlyPayment + "\n The total payment is" + totalPayment;
         JOptionPane.showMessageDialog(null, output,"Result",JOptionPane.INFORMATION_MESSAGE);
     }
 }

@@ -1,4 +1,4 @@
-package hello;
+package Unclassified;
 import java.util.Scanner;
 public class Area {
     public static void main(final String[] args) {

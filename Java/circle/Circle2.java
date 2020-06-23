@@ -1,3 +1,4 @@
+package circle;
 public class Circle2 {
     double radius;
     static private int numberOfObject = 0;//初始化,静态变量

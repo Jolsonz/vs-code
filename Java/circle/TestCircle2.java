@@ -1,3 +1,5 @@
+package circle;
+
 public class TestCircle2 {
    public static void main(String[] args) {
        System.out.println("在没实例化之前\n"+"实例的个数 "+ Circle2.getNumberOfObject());
