@@ -1,11 +1,12 @@
 package example.BMI;
+//P283
 public class BMI {
     private String name;
     private int age;
     private double weight;
     private double height;
     public static final double KILOGRAMS_PER_POUND=0.45359237;
-    public static final double METERS_PER_INCH = 0.0254;
+    private static final double METERS_PER_INCH = 0.0254;//这里写private或者public都没影响，但是写成静态的常变量比较好。
     public BMI(String name,int age , double weight ,double height) {
         this.age=age;
         this.weight= weight;
@@ -15,7 +16,7 @@ public class BMI {
     public BMI(String name, double weight ,double height){
         this(name,20,weight,height);//年龄默认20
     }
-    public double getBMI(){
+    public double getBMI(){ 
         double a = weight * KILOGRAMS_PER_POUND /((height*METERS_PER_INCH)*(height*METERS_PER_INCH));
         return  Math.round(a*100)/100.0;
     }
