@@ -6,6 +6,9 @@
         "**/*.exe": true
     },
     "cSpell.ignoreWords": [
+        "hash",
+        "hash map",
+        "map",
         "stoi"
     ],
     "python.pythonPath": "C:\\Users\\Jolson\\AppData\\Local\\Programs\\Python\\Python35\\python.exe",

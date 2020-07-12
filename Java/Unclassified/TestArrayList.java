@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import example.Extends.Circle4;
 
 public class TestArrayList {
+    @SuppressWarnings("all")
     public static void main(String[] args) {
         ArrayList cityList = new ArrayList();
         cityList.add("London");
